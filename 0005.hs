@@ -1,6 +1,8 @@
 -- As is mentioned in the overview PDF, this can be done without any
 -- actual programming.
 
+{-# Language BangPatterns #-}
+
 import Data.Numbers.Primes
 
 val = 2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19
@@ -13,6 +15,10 @@ lcmOfNumsUntil n = foldr1 lcm [1..n]
 lcmOfNumsUntil' :: Integer -> Integer
 lcmOfNumsUntil' n = product . map (maxPowerBelow n) . takeWhile (< n) $ primes
   where
+    -- Use a strict version of iterate to avoid blowing up the heap
+    -- for large n; we're evaluating all the elements of the list as
+    -- we go anyway so we're not losing anything by being strict here.
+    iterate f !x = x : iterate f (f x)
     maxPowerBelow n p = last . takeWhile (<n) $ iterate (*p) p
 
 val' = lcmOfNumsUntil' 20
