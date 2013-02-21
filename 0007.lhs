@@ -56,7 +56,7 @@ the sieving algorithm, just decrease the constant factor.
 >               (a, b) = splitAt k $ reducedSearchSpace k in
 >   a ++ sieve b
 >
-> main = print $ primes' !! 10001
+> main = print $ primes' !! 10000
 
 XXX: At least, one would think this would produce a speedup. In
 reality, it slows down the search by several seconds! What's going on
