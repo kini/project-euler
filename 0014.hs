@@ -6,7 +6,9 @@
 -- I learn more about monads, I think! Anyway, this solution runs in
 -- ~10s.
 
-collatz :: Integer -> Integer
+import Data.Word
+
+collatz :: Word64 -> Word64
 collatz n
   | mod n 2 == 0 = n `div` 2
   | otherwise    = 3*n + 1
