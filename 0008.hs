@@ -25,3 +25,5 @@ myNumString = "731671765313306249192251196744265747423553491949349698352\
 myNum = map ((+(- ord '0')) . ord) myNumString
 
 val = maximum $ map (product . take 5) $ tails myNum
+
+main = print val

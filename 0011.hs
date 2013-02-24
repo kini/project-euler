@@ -41,3 +41,5 @@ quadruplets = hs ++ vs ++ ds
          , j <- [0 .. height-4]]
 
 val = maximum $ map product quadruplets
+
+main = print val

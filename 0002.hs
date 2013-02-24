@@ -4,3 +4,5 @@
 val = sum $ takeWhile (<= 4000000) $ filter even fibs
   where
     fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+
+main = print val

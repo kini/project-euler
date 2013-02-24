@@ -7,3 +7,5 @@ vals = [a*b*c | a <- [0 .. 1000]
          , a*a + b*b == c*c]
 
 val = head vals
+
+main = print val

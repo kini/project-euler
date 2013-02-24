@@ -31,3 +31,5 @@ lcmOfNumsUntil'' n = product . map (maxPowerBelow n) . takeWhile (< n) $ primes
   where
     maxPowerBelow n p = let [n', p'] = map fromInteger [n, p] in
        p ^ floor (log n' / log p')
+
+main = print val'

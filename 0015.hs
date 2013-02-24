@@ -3,3 +3,5 @@
 factorial n = product [2..n]
 
 val = factorial 40 `div` (factorial 20 * factorial 20)
+
+main = print val

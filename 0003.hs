@@ -15,3 +15,7 @@ largestPrimeFactor n = largestPrimeFactor' primes n
     rid n p
       | p `divides` n = rid (n `div` p) p
       | otherwise = n
+
+val = largestPrimeFactor 600851475143
+
+main = print val
